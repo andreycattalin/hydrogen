@@ -166,7 +166,7 @@ export function ErrorBoundary() {
 
 export const ErrorBoundaryV1 = ({error}: {error: Error}) => {
   // eslint-disable-next-line no-console
-  console.error(error);
+  console.error(error.stack);
 
   return <div>There was an error.</div>;
 };
@@ -174,7 +174,7 @@ export const ErrorBoundaryV1 = ({error}: {error: Error}) => {
 export function CatchBoundary() {
   const caught = useCatch();
   // eslint-disable-next-line no-console
-  console.error(caught);
+  console.error(caught.stack);
 
   return (
     <div>
